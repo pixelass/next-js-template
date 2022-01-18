@@ -8,22 +8,23 @@ const useGet = url => {
 		error: null,
 	});
 	useEffect(() => {
-		setState(previousState => ({
-			...previousState,
+		setState(({ data }) => ({
+			data,
+			error: null,
 			loading: true,
 		}));
 		axios
 			.get(url)
 			.then(({ data }) => {
-				setState(previousState => ({
-					...previousState,
+				setState({
+					error: null,
 					data,
 					loading: false,
-				}));
+				});
 			})
 			.catch(error => {
-				setState(previousState => ({
-					...previousState,
+				setState(({ data }) => ({
+					data,
 					error,
 					loading: false,
 				}));

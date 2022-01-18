@@ -1,6 +1,8 @@
 {
   "name": "next-app",
+  "description": "Next.js template",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "next build",
     "build:dev": "npx cross-env@7 NODE_ENV=development next build",
@@ -18,7 +20,6 @@
     "storybook:build": "build-storybook",
     "test:e2e": "npx start-server-and-test@1 start http://localhost:3000 cypress:run",
     "test:unit": "npm run jest",
-    "pretest": "npm run build:dev",
     "test": "npm run test:unit && npm run test:e2e"
   },
   "dependencies": {
